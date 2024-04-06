@@ -2,15 +2,20 @@ package com.example.travel_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class MainActivity extends AppCompatActivity {
+//    private LottieAnimationView animationView;
 
     private Button loginBtn;
 
@@ -18,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private TextView gotoSignUp;
+
+//    private LinearLayout Logging;
+
+//    private Handler handler;
+
+//    private Runnable runnable;
 
 
 
@@ -33,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         gotoSignUp = findViewById(R.id.lsignUp);
 
+//        animationView = findViewById(R.id.animation_view);
+
+//        Logging = findViewById(R.id.loginPg);
+
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +56,25 @@ public class MainActivity extends AppCompatActivity {
                 String Password = password.getText().toString();
 
                 if (userName.equals("sakthi") && Password.equals("sakthi")) {
-                    Toast.makeText(MainActivity.this, "LOGIN SUCCESSFULLY", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, NavActivity.class);
-                    startActivity(intent);
+
+                    Toast.makeText(MainActivity.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, NavActivity.class);
+                    startActivity(i);
+//                    animationView.setVisibility(View.VISIBLE);
+//                    Logging.setVisibility(View.GONE);
+//                    animationView.playAnimation();
+
+//                    Thread td = new Thread(){
+//
+//                        public void run(){
+//                            try{
+//                                sleep(5000);
+//                            }catch (Exception e){
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    };td.start();
+
                 }
                 else{
                     Toast.makeText(MainActivity.this, "UserName or Password Incorrect", Toast.LENGTH_SHORT).show();
@@ -61,4 +92,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+//    protected void onDestroy(){
+//        super.onDestroy();
+//        handler.removeCallbacks(runnable);
+//    }
+
+
 }
