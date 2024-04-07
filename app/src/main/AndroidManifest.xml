@@ -16,7 +16,7 @@
             android:name=".Loading"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".login"
             android:exported="false"></activity>
         <activity
             android:name=".AboutFragment"

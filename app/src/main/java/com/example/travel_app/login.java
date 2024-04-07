@@ -2,19 +2,15 @@ package com.example.travel_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.airbnb.lottie.LottieAnimationView;
-
-public class MainActivity extends AppCompatActivity {
+public class login extends AppCompatActivity {
 //    private LottieAnimationView animationView;
 
     private Button loginBtn;
@@ -35,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         loginBtn = findViewById(R.id.loginBtn);
 
@@ -57,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (userName.equals("sakthi") && Password.equals("sakthi")) {
 
-                    Toast.makeText(MainActivity.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(MainActivity.this, NavActivity.class);
+                    Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(login.this, NavActivity.class);
                     startActivity(i);
 //                    animationView.setVisibility(View.VISIBLE);
 //                    Logging.setVisibility(View.GONE);
@@ -77,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 else{
-                    Toast.makeText(MainActivity.this, "UserName or Password Incorrect", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "UserName or Password Incorrect", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -85,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         gotoSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Sign_Up.class);
+                Intent i = new Intent(login.this, Sign_Up.class);
                 startActivity(i);
 
             }

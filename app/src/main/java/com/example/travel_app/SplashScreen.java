@@ -3,11 +3,8 @@ package com.example.travel_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Objects;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -23,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
         runnable = new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, MainActivity.class);
+                Intent i = new Intent(SplashScreen.this, login.class);
                 startActivity(i);
                 finish();
             }
