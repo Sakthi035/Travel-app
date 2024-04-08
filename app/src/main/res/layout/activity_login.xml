@@ -41,8 +41,7 @@
                 android:text="TREKLY"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:drawableTop="@drawable/baseline_location_on_24"
-                android:drawablePadding="10dp"
+                android:typeface="normal"
                 android:textCursorDrawable="@color/white"
                 android:textAlignment="center"
                 android:textSize="38dp"/>
@@ -77,32 +76,81 @@
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="@color/lavender"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/username"
-                    android:background="@drawable/custom_edit"
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="10dp"
-                    android:hint="USER NAME"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="@color/cardview_dark_background"
-                    android:layout_marginTop="55dp"/>
 
-                <EditText
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/password"
-                    android:background="@drawable/custom_edit"
-                    android:drawableStart="@drawable/ic_pass"
-                    android:drawablePadding="10dp"
-                    android:hint="PASSWORD"
-                    android:inputType="textPassword"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="@color/cardview_dark_background"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/username"
+                        android:background="@drawable/custom_edit"
+                        android:drawableStart="@drawable/ic_person"
+                        android:drawablePadding="10dp"
+                        android:hint="USER NAME"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:padding="10dp"
+                        android:textColor="@color/gray"
+                        android:textColorHighlight="@color/cardview_dark_background" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:id="@+id/username"-->
+<!--                    android:background="@drawable/custom_edit"-->
+<!--                    android:drawableStart="@drawable/ic_person"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:hint="USER NAME"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:typeface="serif"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="@color/gray"-->
+<!--                    android:textColorHighlight="@color/cardview_dark_background"-->
+<!--                    android:layout_marginTop="55dp"/>-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:endIconMode="password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/password"
+                        android:background="@drawable/custom_edit"
+                        android:drawableStart="@drawable/ic_pass"
+                        android:drawablePadding="10dp"
+                        android:hint="PASSWORD"
+                        android:typeface="serif"
+                        android:textStyle="bold"
+                        android:inputType="textPassword"
+                        android:padding="10dp"
+                        android:textColorHighlight="@color/cardview_dark_background"
+                        android:textColor="@color/gray"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:id="@+id/password"-->
+<!--                    android:background="@drawable/custom_edit"-->
+<!--                    android:drawableStart="@drawable/ic_pass"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:hint="PASSWORD"-->
+<!--                    android:typeface="serif"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHighlight="@color/cardview_dark_background"-->
+<!--                    android:layout_marginTop="30dp"/>-->
 
                 <Button
                     android:layout_width="match_parent"
@@ -140,7 +188,7 @@
                 android:text="Sign Up"
                 android:textStyle="bold"
                 android:textSize="24dp"
-                android:textColor="@color/lavender"/>
+                android:textColor="@color/purple"/>
         </LinearLayout>
     </LinearLayout>
 

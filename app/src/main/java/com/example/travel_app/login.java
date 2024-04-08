@@ -2,6 +2,8 @@ package com.example.travel_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,15 +12,25 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class login extends AppCompatActivity {
 //    private LottieAnimationView animationView;
 
     private Button loginBtn;
 
-    private EditText username, password;
+    private EditText username;
 
 
     private TextView gotoSignUp;
+
+    private TextInputLayout TextInputLayout;
+
+    private TextInputEditText password;
 
 //    private LinearLayout Logging;
 
@@ -39,6 +51,10 @@ public class login extends AppCompatActivity {
         password = findViewById(R.id.password);
 
         gotoSignUp = findViewById(R.id.lsignUp);
+
+        TextInputLayout = findViewById(R.id.passwordLayout);
+
+
 
 //        animationView = findViewById(R.id.animation_view);
 
@@ -78,11 +94,29 @@ public class login extends AppCompatActivity {
             }
         });
 
+
         gotoSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(login.this, Sign_Up.class);
                 startActivity(i);
+
+            }
+        });
+
+        password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
 
             }
         });
