@@ -27,6 +27,7 @@
             android:padding="10sp"
             android:layout_gravity="end"
             android:layout_marginTop="50dp"
+            android:textAlignment="textEnd"
             />
 
         <TextView
@@ -40,6 +41,7 @@
             android:textColor="@color/white"
             android:padding="10sp"
             android:layout_gravity="end"
+            android:textAlignment="textEnd"
             />
 
         <RelativeLayout
