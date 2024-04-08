@@ -34,6 +34,5 @@ public class Manali extends AppCompatActivity {
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 
-        imageSlider.setSlideAnimation(AnimationTypes.ZOOM_OUT);
     }
 }
