@@ -114,14 +114,14 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ladakh"
-                    android:id="@+id/ladakh"
+                    android:src="@drawable/boat_house"
+                    android:id="@+id/boat_house"
                     android:layout_centerInParent="true"/>
             </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="LADAKH"
+                android:text="BOAT HOUSE"
                 android:layout_gravity="bottom"
                 android:textSize="24dp"
                 android:textAlignment="center"
@@ -151,14 +151,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/red_fort"
-                    android:id="@+id/redfort"
+                    android:src="@drawable/goa_beach"
+                    android:id="@+id/goa_beach"
                     android:layout_centerInParent="true"/>
             </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RED FORT"
+                android:text="GOA"
                 android:layout_below="@+id/tajMahla"
                 android:layout_gravity="bottom"
                 android:textSize="24dp"

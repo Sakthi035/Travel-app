@@ -46,10 +46,10 @@
             android:name=".BigTemple"
             android:exported="false" />
         <activity
-            android:name=".Ladakh"
+            android:name=".BoatHouse"
             android:exported="false" />
         <activity
-            android:name=".RedFort"
+            android:name=".Goa"
             android:exported="false" />
         <activity
             android:name=".TajMahal"

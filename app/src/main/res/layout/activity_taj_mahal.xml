@@ -1,18 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TajMahal">
+    tools:context=".TajMahal"
+    android:background="@drawable/blue_bg"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="18dp"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_back_arrow"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"/>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="20dp"
+        android:padding="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        app:cardBackgroundColor="@color/white">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider_taj_mahal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:iss_delay="1000"
+            app:iss_text_align="CENTER"
+            app:iss_corner_radius="20"
+            app:iss_unselected_dot="@drawable/default_unselected_dot"
+            />
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textStyle="bold"
-        android:text="TAJ MAHAL"
-        android:textSize="32dp"
-        android:textAlignment="center"/>
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="screen"
+        android:background="@drawable/custom_edit"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:alpha="0.7">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Taj Mahal"
+                android:textStyle="bold"
+                android:textSize="32dp"
+                android:layout_marginLeft="20dp"
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="DESCRIPTION:"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="                  Situated near the end of valley, Manali is one of the most attractive tourist spot not only of Himachal Pradesh, but of International fame also. \n\n                  Manali is synonymous streams and birdsong, forests and orchards and grandees of snow-capped mountains.
+Manali is the real starting point of an ancient trade route which crosses the Rohtang and Baralacha passes, and runs via Lahul and Ladakh to Kashmir while divergent road connects it with Spiti."
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/location_taj_mahal"
+            android:layout_gravity="center"
+            android:text="Get Location"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold|italic"
+            android:backgroundTint="@color/teal"
+            app:cornerRadius="10dp"
+            android:drawableEnd="@drawable/ic_location_white"
+            android:alpha="1"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

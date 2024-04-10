@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IshaYoga"
+    tools:context=".Goa"
     android:background="@drawable/blue_bg"
     android:orientation="vertical">
 
@@ -37,7 +37,7 @@
         app:cardBackgroundColor="@color/white">
 
         <com.denzcoskun.imageslider.ImageSlider
-            android:id="@+id/image_slider_isha_yoga"
+            android:id="@+id/image_slider_goa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:iss_auto_cycle="true"
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Isha Yoga"
+                android:text="Goa"
                 android:textStyle="bold"
                 android:textSize="32dp"
                 android:layout_marginLeft="20dp"
@@ -127,7 +127,7 @@ Manali is the real starting point of an ancient trade route which crosses the Ro
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/location_isha_yoga"
+            android:id="@+id/location_goa"
             android:layout_gravity="center"
             android:text="Get Location"
             android:textColor="@color/white"

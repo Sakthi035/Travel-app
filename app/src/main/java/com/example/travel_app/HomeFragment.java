@@ -74,11 +74,11 @@ public class HomeFragment extends Fragment {
         super.onStart();
 
         manali = context.findViewById(R.id.manali);
-        redFort = context.findViewById(R.id.redfort);
+        redFort = context.findViewById(R.id.goa_beach);
         tajMahla = context.findViewById(R.id.tajMahla);
         ishaYoga = context.findViewById(R.id.isha_yoga);
         bigTemple = context.findViewById(R.id.bigTemple);
-        ladakh = context.findViewById(R.id.ladakh);
+        ladakh = context.findViewById(R.id.boat_house);
 
         manali.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment {
         redFort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(context, RedFort.class);
+                Intent m = new Intent(context, Goa.class);
                 startActivity(m);
             }
         });
@@ -115,7 +115,7 @@ public class HomeFragment extends Fragment {
         ladakh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(context, Ladakh.class);
+                Intent m = new Intent(context, BoatHouse.class);
                 startActivity(m);
             }
         });

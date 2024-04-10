@@ -18,7 +18,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
 
-public class Manali extends AppCompatActivity {
+public class Goa extends AppCompatActivity {
 
     private ImageSlider imageSlider;
     private TextView backbtn;
@@ -31,7 +31,7 @@ public class Manali extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Manali.this,NavActivity.class);
+                Intent i = new Intent(Goa.this,NavActivity.class);
                 startActivity(i);
             }
         });
@@ -39,10 +39,10 @@ public class Manali extends AppCompatActivity {
         imageSlider = findViewById(R.id.image_slider_manali);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
 
-        slideModels.add(new SlideModel(R.drawable.manali_slide1, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.manali_slide2, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.manali_slide3, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.manali_slide4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide2, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide4, ScaleTypes.FIT));
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 

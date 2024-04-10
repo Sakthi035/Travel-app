@@ -6,8 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Manali"
-    android:background="@drawable/manali_bg"
+    android:background="@drawable/blue_bg"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="18dp"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_back_arrow"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"/>
 
 
 
@@ -17,7 +30,7 @@
         android:elevation="8dp"
         app:cardCornerRadius="20dp"
         android:padding="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/white"
@@ -98,7 +111,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="                  Situated near the end of valley, Manali is one of the most attractive tourist spot not only of Himachal Pradesh, but of International fame also. \n\n                  Manali is synonymous streams and birdsong, forests and orchards and grandees of snow-capped mountains.
 Manali is the real starting point of an ancient trade route which crosses the Rohtang and Baralacha passes, and runs via Lahul and Ladakh to Kashmir while divergent road connects it with Spiti."
                 android:textAlignment="viewStart"
@@ -121,7 +137,7 @@ Manali is the real starting point of an ancient trade route which crosses the Ro
             app:cornerRadius="10dp"
             android:drawableEnd="@drawable/ic_location_white"
             android:alpha="1"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>

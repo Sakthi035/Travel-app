@@ -17,11 +17,11 @@ public class homePageFragment extends AppCompatActivity {
         setContentView(R.layout.activity_front_page);
 
         manali = findViewById(R.id.manali);
-        redFort = findViewById(R.id.redfort);
+        redFort = findViewById(R.id.goa_beach);
         tajMahla = findViewById(R.id.tajMahla);
         ishaYoga = findViewById(R.id.isha_yoga);
         bigTemple = findViewById(R.id.bigTemple);
-        ladakh = findViewById(R.id.ladakh);
+        ladakh = findViewById(R.id.boat_house);
 
         manali.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class homePageFragment extends AppCompatActivity {
         redFort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(homePageFragment.this, RedFort.class);
+                Intent m = new Intent(homePageFragment.this, Goa.class);
                 startActivity(m);
             }
         });
@@ -58,7 +58,7 @@ public class homePageFragment extends AppCompatActivity {
         ladakh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(homePageFragment.this, Ladakh.class);
+                Intent m = new Intent(homePageFragment.this, BoatHouse.class);
                 startActivity(m);
             }
         });
