@@ -8,21 +8,21 @@
     android:orientation="vertical"
     tools:context=".login"
     android:background="@drawable/loginbg">
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="889dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/rectangle_loading"
-        android:visibility="gone"/>
+
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/animation_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="889dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="1.0"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_loop="true"-->
+<!--        app:lottie_rawRes="@raw/rectangle_loading" -->
+<!--        tools:visibility="invisible"/>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -116,7 +116,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    app:endIconMode="password_toggle">
+                    app:endIconMode="password_toggle"
+                    android:id="@+id/passwordLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -152,16 +153,23 @@
 <!--                    android:textColorHighlight="@color/cardview_dark_background"-->
 <!--                    android:layout_marginTop="30dp"/>-->
 
-                <Button
+<!--                <Button-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="60dp"-->
+<!--                    android:id="@+id/loginBtn"-->
+<!--                    android:layout_marginTop="55dp"-->
+<!--                    android:text="LOGIN"-->
+<!--                    android:textSize="32dp"-->
+<!--                    android:backgroundTint="@color/lavender"-->
+<!--                    app:cornerRadius ="20dp"-->
+<!--                    />-->
+
+                <include
+                    android:id="@+id/loginBtn"
+                    layout="@layout/login_btn_layout"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:id="@+id/loginBtn"
-                    android:layout_marginTop="55dp"
-                    android:text="LOGIN"
-                    android:textSize="32dp"
-                    android:backgroundTint="@color/lavender"
-                    app:cornerRadius ="20dp"
-                    />
+                    android:layout_marginTop="50dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

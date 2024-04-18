@@ -221,17 +221,22 @@
 <!--                android:textColor="@color/black"-->
 <!--                android:textColorHighlight="@color/cardview_dark_background"-->
 <!--                android:layout_marginTop="30dp"/>-->
-
-            <Button
+            <include
+                android:id="@+id/signUpBtn"
+                layout="@layout/signup_button_layout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/signUpBtn"
-                android:layout_marginTop="40dp"
-                android:text="SIGN UP"
-                android:textSize="32dp"
-                android:backgroundTint="@color/lavender"
-                app:cornerRadius ="20dp"
-                />
+                android:layout_marginTop="50dp"/>
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:id="@+id/signUpBtn"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:text="SIGN UP"-->
+<!--                android:textSize="32dp"-->
+<!--                android:backgroundTint="@color/lavender"-->
+<!--                app:cornerRadius ="20dp"-->
+<!--                />-->
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

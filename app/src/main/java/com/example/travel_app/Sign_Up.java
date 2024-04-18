@@ -3,10 +3,12 @@ package com.example.travel_app;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +21,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Sign_Up extends AppCompatActivity {
+    View signupBtn;
 
-    private Button signupBtn;
+//    private Button signupBtn;
     private TextView goToLogin;
 
     private TextInputLayout PasswordLayout,ConfirmPasswordLayout;
@@ -46,9 +49,28 @@ public class Sign_Up extends AppCompatActivity {
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotologin = new Intent(Sign_Up.this, login.class);
-                startActivity(gotologin);
-                Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+
+                SignupButton signupButton = new SignupButton(Sign_Up.this, signupBtn);
+                signupButton.buttonActivated();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        signupButton.buttonFinishedCorrect();
+                        Handler handler2 = new Handler();
+                        handler2.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                signupButton.buttonNormal();
+                                Intent gotologin = new Intent(Sign_Up.this, login.class);
+                                startActivity(gotologin);
+                                Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+                            }
+                        },500);
+                    }
+                },3000);
+
             }
         });
 
@@ -57,6 +79,7 @@ public class Sign_Up extends AppCompatActivity {
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 Intent gotologin = new Intent(Sign_Up.this, login.class);
                 startActivity(gotologin);
 
