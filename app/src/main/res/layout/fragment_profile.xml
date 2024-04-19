@@ -3,10 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragment"
+    android:padding="20dp">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/profileText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="PROFILE"
@@ -14,5 +17,20 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="32dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logOutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lavender"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp"
+        android:text="LOG OUT"
+        android:textStyle="bold"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+
+        />
 
 </FrameLayout>

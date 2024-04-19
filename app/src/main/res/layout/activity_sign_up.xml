@@ -64,11 +64,11 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/username"
+                    android:id="@+id/name"
                     android:background="@drawable/custom_edit"
                     android:drawableStart="@drawable/ic_person"
                     android:drawablePadding="10dp"
-                    android:hint="USER NAME"
+                    android:hint="NAME"
                     android:textStyle="bold"
                     android:typeface="serif"
                     android:padding="10dp"

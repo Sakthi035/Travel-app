@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -11,33 +12,50 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class login extends AppCompatActivity {
-
+    FirebaseAuth mAuth;
     View loginBtn;
     private LottieAnimationView animationView;
 
 //    private Button loginBtn;
 
-    private EditText username;
+//    private EditText username;
 
 
     private TextView gotoSignUp;
 
     private TextInputLayout TextInputLayout;
 
-    private TextInputEditText password;
+    private TextInputEditText Password,userEmail;
 
     private LinearLayout Logging;
 
     private Handler handler;
 
     private Runnable runnable;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent i = new Intent(getApplicationContext(), NavActivity.class);
+            startActivity(i);
+        }
+    }
 
 
 
@@ -46,19 +64,13 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        mAuth = FirebaseAuth.getInstance();
         loginBtn = findViewById(R.id.loginBtn);
-
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-
+        userEmail = findViewById(R.id.userEmail);
+        Password = findViewById(R.id.password);
         gotoSignUp = findViewById(R.id.lsignUp);
-
 //        TextInputLayout = findViewById(R.id.passwordLayout);
-
-
-
 //        animationView = findViewById(R.id.animation_view);
-
         Logging = findViewById(R.id.loginPg);
 
 
@@ -66,58 +78,91 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                LoginButton loginButton = new LoginButton(login.this, loginBtn);
+                String email,password,name;
+                email = String.valueOf(userEmail.getText());
+                password = String.valueOf(Password.getText());
 
-                loginButton.buttonActivated();
-                Handler handler = new Handler();
+                if(TextUtils.isEmpty(email)){
+                    Toast.makeText(login.this, "Enter Email",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
+                if(TextUtils.isEmpty(password)){
+                    Toast.makeText(login.this, "Enter Password",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                        String userName = username.getText().toString();
-                        String Password = password.getText().toString();
-
-                        if (userName.equals("sakthi") && Password.equals("sakthi")) {
-                            loginButton.buttonFinishedCorrect();
-                            Handler handler1 = new Handler();
-                            handler1.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loginButton.buttonNormal();
-                                    Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(login.this, NavActivity.class);
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Toast.makeText(login.this, "Login successfully", Toast.LENGTH_SHORT).show();
+                                    Intent i = new Intent(getApplicationContext(), NavActivity.class);
                                     startActivity(i);
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Toast.makeText(login.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
 
-//                                  animationView.setVisibility(View.VISIBLE);
-//                                  Logging.setVisibility(View.GONE);
-//                                  animationView.playAnimation();
+//                LoginButton loginButton = new LoginButton(login.this, loginBtn);
 //
-//                                  Thread td = new Thread(){
-//                                      public void run(){
-//                                          try{
-//                                              sleep(2000);
-//                                          }catch (Exception e){
-//                                              e.printStackTrace();
-//                                          }
-//                                      }
-//                                  };td.start();
+//                loginButton.buttonActivated();
+//                Handler handler = new Handler();
 //
-                                }
-                            }, 1000);
-                        } else {
-                            loginButton.buttonFinishedWrong();
-                            Toast.makeText(login.this, "UserName or Password Incorrect", Toast.LENGTH_SHORT).show();
-                            Handler handler2 = new Handler();
-                            handler2.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loginButton.buttonNormal();
-                                }
-                            },1000);
-                        }
-                    }
-                }, 3000);
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//
+//                        String userName = username.getText().toString();
+//                        String Password = password.getText().toString();
+//
+//                        if (userName.equals("sakthi") && Password.equals("sakthi")) {
+//                            loginButton.buttonFinishedCorrect();
+//                            Handler handler1 = new Handler();
+//                            handler1.postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    loginButton.buttonNormal();
+//                                    Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+//                                    Intent i = new Intent(login.this, NavActivity.class);
+//                                    startActivity(i);
+//
+////                                  animationView.setVisibility(View.VISIBLE);
+////                                  Logging.setVisibility(View.GONE);
+////                                  animationView.playAnimation();
+////
+////                                  Thread td = new Thread(){
+////                                      public void run(){
+////                                          try{
+////                                              sleep(2000);
+////                                          }catch (Exception e){
+////                                              e.printStackTrace();
+////                                          }
+////                                      }
+////                                  };td.start();
+////
+//                                }
+//                            }, 1000);
+//                        } else {
+//                            loginButton.buttonFinishedWrong();
+//                            Toast.makeText(login.this, "UserName or Password Incorrect", Toast.LENGTH_SHORT).show();
+//                            Handler handler2 = new Handler();
+//                            handler2.postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    loginButton.buttonNormal();
+//                                }
+//                            },1000);
+//                        }
+//                    }
+//                }, 3000);
             }
         });
 
@@ -131,7 +176,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        password.addTextChangedListener(new TextWatcher() {
+        Password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
