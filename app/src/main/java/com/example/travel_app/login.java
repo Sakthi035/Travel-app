@@ -28,24 +28,12 @@ public class login extends AppCompatActivity {
     FirebaseAuth mAuth;
     View loginBtn;
     private LottieAnimationView animationView;
-
-//    private Button loginBtn;
-
-//    private EditText username;
-
-
     private TextView gotoSignUp;
-
     private TextInputLayout TextInputLayout;
-
     private TextInputEditText Password,userEmail;
-
     private LinearLayout Logging;
-
     private Handler handler;
-
     private Runnable runnable;
-
     @Override
     public void onStart() {
         super.onStart();
@@ -56,9 +44,6 @@ public class login extends AppCompatActivity {
             startActivity(i);
         }
     }
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +54,7 @@ public class login extends AppCompatActivity {
         userEmail = findViewById(R.id.userEmail);
         Password = findViewById(R.id.password);
         gotoSignUp = findViewById(R.id.lsignUp);
-//        TextInputLayout = findViewById(R.id.passwordLayout);
+        TextInputLayout = findViewById(R.id.passwordLayout);
 //        animationView = findViewById(R.id.animation_view);
         Logging = findViewById(R.id.loginPg);
 
@@ -116,21 +101,17 @@ public class login extends AppCompatActivity {
                                                     Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
                                                     Intent i = new Intent(login.this, NavActivity.class);
                                                     startActivity(i);
-
-                        //                                  animationView.setVisibility(View.VISIBLE);
-                        //                                  Logging.setVisibility(View.GONE);
-                        //                                  animationView.playAnimation();
-                        //
-                        //                                  Thread td = new Thread(){
-                        //                                      public void run(){
-                        //                                          try{
-                        //                                              sleep(2000);
-                        //                                          }catch (Exception e){
-                        //                                              e.printStackTrace();
-                        //                                          }
-                        //                                      }
-                        //                                  };td.start();
-                        //
+//                                                    Handler handler3 = new Handler();
+//                                                    handler3.postDelayed(new Runnable() {
+//                                                        @Override
+//                                                        public void run() {
+//                                                            animationView.setVisibility(View.VISIBLE);
+//                                                            Logging.setVisibility(View.GONE);
+//                                                            animationView.playAnimation();
+//
+//
+//                                                        }
+//                                                    },3000);
                                                 }
                                             }, 1000);
 

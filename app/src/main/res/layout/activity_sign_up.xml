@@ -73,20 +73,10 @@
                     android:typeface="serif"
                     android:padding="10dp"
                     android:textColor="@color/gray"
-                    android:textColorHighlight="@color/cardview_dark_background" />
+                    android:textColorHighlight="@color/cardview_dark_background"
+                    android:textSize="12sp"/>
             </com.google.android.material.textfield.TextInputLayout>
-<!--            <EditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:id="@+id/username"-->
-<!--                android:background="@drawable/custom_edit"-->
-<!--                android:drawableStart="@drawable/ic_person"-->
-<!--                android:drawablePadding="10dp"-->
-<!--                android:hint="USER NAME"-->
-<!--                android:padding="10dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textColorHighlight="@color/cardview_dark_background"-->
-<!--                android:layout_marginTop="55dp"/>-->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,21 +94,9 @@
                     android:typeface="serif"
                     android:padding="10dp"
                     android:textColor="@color/gray"
-                    android:textColorHighlight="@color/cardview_dark_background" />
+                    android:textColorHighlight="@color/cardview_dark_background"
+                    android:textSize="12sp"/>
             </com.google.android.material.textfield.TextInputLayout>
-
-<!--            <EditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:id="@+id/email"-->
-<!--                android:background="@drawable/custom_edit"-->
-<!--                android:drawableStart="@drawable/ic_mail"-->
-<!--                android:drawablePadding="10dp"-->
-<!--                android:hint="E-MAIL"-->
-<!--                android:padding="10dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textColorHighlight="@color/cardview_dark_background"-->
-<!--                android:layout_marginTop="30dp"/>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordLayout"
@@ -133,9 +111,7 @@
                 app:helperTextEnabled="true"
                 app:helperText="Enter Password"
                 app:helperTextTextColor="@color/gray"
-                app:boxBackgroundMode="outline"
-
-                >
+                app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
@@ -153,24 +129,9 @@
                     android:textStyle="bold"
                     android:typeface="serif"
                     android:textColor="@color/black"
-
-
-                    />
+                    android:textSize="12sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <EditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:id="@+id/password"-->
-<!--                android:background="@drawable/custom_edit"-->
-<!--                android:drawableStart="@drawable/ic_pass"-->
-<!--                android:drawablePadding="10dp"-->
-<!--                android:hint="PASSWORD"-->
-<!--                android:inputType="textPassword"-->
-<!--                android:padding="10dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textColorHighlight="@color/cardview_dark_background"-->
-<!--                android:layout_marginTop="30dp"/>-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/confirmPasswordLayout"
                 android:layout_width="match_parent"
@@ -184,9 +145,7 @@
                 app:helperTextEnabled="true"
                 app:helperText="Enter Password"
                 app:helperTextTextColor="@color/gray"
-                app:boxBackgroundMode="outline"
-
-                >
+                app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -203,40 +162,15 @@
                     android:id="@+id/confirm_password"
                     android:typeface="serif"
                     android:textColorHighlight="@color/cardview_dark_background"
-
-
-                    />
+                    android:textSize="12sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <EditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:id="@+id/confirm_password"-->
-<!--                android:background="@drawable/custom_edit"-->
-<!--                android:drawableStart="@drawable/ic_pass"-->
-<!--                android:drawablePadding="10dp"-->
-<!--                android:hint="CONFIRM PASSWORD"-->
-<!--                android:inputType="textPassword"-->
-<!--                android:padding="10dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textColorHighlight="@color/cardview_dark_background"-->
-<!--                android:layout_marginTop="30dp"/>-->
             <include
                 android:id="@+id/signUpBtn"
                 layout="@layout/signup_button_layout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="50dp"/>
-<!--            <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:id="@+id/signUpBtn"-->
-<!--                android:layout_marginTop="40dp"-->
-<!--                android:text="SIGN UP"-->
-<!--                android:textSize="32dp"-->
-<!--                android:backgroundTint="@color/lavender"-->
-<!--                app:cornerRadius ="20dp"-->
-<!--                />-->
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -264,13 +198,5 @@
             android:textStyle="bold"
             android:textSize="24dp"
             android:textColor="@color/purple"/>
-
-
-
     </LinearLayout>
-
-
-
-
-
 </LinearLayout>

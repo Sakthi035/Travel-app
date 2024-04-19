@@ -21,8 +21,8 @@
 <!--        app:layout_constraintVertical_bias="1.0"-->
 <!--        app:lottie_autoPlay="true"-->
 <!--        app:lottie_loop="true"-->
-<!--        app:lottie_rawRes="@raw/rectangle_loading" -->
-<!--        tools:visibility="invisible"/>-->
+<!--        app:lottie_rawRes="@raw/rectangle_loading"-->
+<!--        tools:visibility="gone"/>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -94,23 +94,10 @@
                         android:textColor="@color/gray"
                         android:textColorHighlight="@color/cardview_dark_background"
                         android:textStyle="bold"
-                        android:typeface="serif" />
+                        android:typeface="serif"
+                        android:textSize="12sp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
-<!--                <EditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:id="@+id/username"-->
-<!--                    android:background="@drawable/custom_edit"-->
-<!--                    android:drawableStart="@drawable/ic_person"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:hint="USER NAME"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:typeface="serif"-->
-<!--                    android:padding="10dp"-->
-<!--                    android:textColor="@color/gray"-->
-<!--                    android:textColorHighlight="@color/cardview_dark_background"-->
-<!--                    android:layout_marginTop="55dp"/>-->
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -132,43 +119,14 @@
                         android:inputType="textPassword"
                         android:padding="10dp"
                         android:textColorHighlight="@color/cardview_dark_background"
-                        android:textColor="@color/gray"/>
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-
-<!--                <EditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:id="@+id/password"-->
-<!--                    android:background="@drawable/custom_edit"-->
-<!--                    android:drawableStart="@drawable/ic_pass"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:hint="PASSWORD"-->
-<!--                    android:typeface="serif"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:inputType="textPassword"-->
-<!--                    android:padding="10dp"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textColorHighlight="@color/cardview_dark_background"-->
-<!--                    android:layout_marginTop="30dp"/>-->
-
-<!--                <Button-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="60dp"-->
-<!--                    android:id="@+id/loginBtn"-->
-<!--                    android:layout_marginTop="55dp"-->
-<!--                    android:text="LOGIN"-->
-<!--                    android:textSize="32dp"-->
-<!--                    android:backgroundTint="@color/lavender"-->
-<!--                    app:cornerRadius ="20dp"-->
-<!--                    />-->
-
                 <include
                     android:id="@+id/loginBtn"
                     layout="@layout/login_btn_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="50dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
