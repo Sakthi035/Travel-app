@@ -96,73 +96,60 @@ public class login extends AppCompatActivity {
 
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            LoginButton loginButton = new LoginButton(login.this, loginBtn);
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Toast.makeText(login.this, "Login successfully", Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(getApplicationContext(), NavActivity.class);
-                                    startActivity(i);
+                                    loginButton.buttonActivated();
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+
+                                            loginButton.buttonFinishedCorrect();
+                                            Handler handler1 = new Handler();
+                                            handler1.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    loginButton.buttonNormal();
+                                                    Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+                                                    Intent i = new Intent(login.this, NavActivity.class);
+                                                    startActivity(i);
+
+                        //                                  animationView.setVisibility(View.VISIBLE);
+                        //                                  Logging.setVisibility(View.GONE);
+                        //                                  animationView.playAnimation();
+                        //
+                        //                                  Thread td = new Thread(){
+                        //                                      public void run(){
+                        //                                          try{
+                        //                                              sleep(2000);
+                        //                                          }catch (Exception e){
+                        //                                              e.printStackTrace();
+                        //                                          }
+                        //                                      }
+                        //                                  };td.start();
+                        //
+                                                }
+                                            }, 1000);
+
+                                            }
+                                        }, 3000);
                                 } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(login.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    loginButton.buttonFinishedWrong();
+                                    Handler handler2 = new Handler();
+                                    handler2.postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            loginButton.buttonNormal();
+                                            Toast.makeText(login.this, "Authentication failed 'USER NAME OR PASSWORD INCORRECT'",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    },1000);
                                 }
                             }
                         });
-
-//                LoginButton loginButton = new LoginButton(login.this, loginBtn);
-//
-//                loginButton.buttonActivated();
-//                Handler handler = new Handler();
-//
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//
-//                        String userName = username.getText().toString();
-//                        String Password = password.getText().toString();
-//
-//                        if (userName.equals("sakthi") && Password.equals("sakthi")) {
-//                            loginButton.buttonFinishedCorrect();
-//                            Handler handler1 = new Handler();
-//                            handler1.postDelayed(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    loginButton.buttonNormal();
-//                                    Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
-//                                    Intent i = new Intent(login.this, NavActivity.class);
-//                                    startActivity(i);
-//
-////                                  animationView.setVisibility(View.VISIBLE);
-////                                  Logging.setVisibility(View.GONE);
-////                                  animationView.playAnimation();
-////
-////                                  Thread td = new Thread(){
-////                                      public void run(){
-////                                          try{
-////                                              sleep(2000);
-////                                          }catch (Exception e){
-////                                              e.printStackTrace();
-////                                          }
-////                                      }
-////                                  };td.start();
-////
-//                                }
-//                            }, 1000);
-//                        } else {
-//                            loginButton.buttonFinishedWrong();
-//                            Toast.makeText(login.this, "UserName or Password Incorrect", Toast.LENGTH_SHORT).show();
-//                            Handler handler2 = new Handler();
-//                            handler2.postDelayed(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    loginButton.buttonNormal();
-//                                }
-//                            },1000);
-//                        }
-//                    }
-//                }, 3000);
             }
         });
 

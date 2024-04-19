@@ -97,50 +97,41 @@ public class Sign_Up extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-//                                SignupButton signupButton = new SignupButton(Sign_Up.this, signupBtn);
-//                                signupButton.buttonActivated();
-
-
-
                                 if (task.isSuccessful()) {
 
-                                    Toast.makeText(Sign_Up.this, "Sign Up successfully", Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(getApplicationContext(), NavActivity.class);
-                                    startActivity(i);
-                                    // Sign in success, update UI with the signed-in user's information
-//                                    SignupButton signupButton = new SignupButton(Sign_Up.this, signupBtn);
-//                                    signupButton.buttonActivated();
-//
-//                                    Handler handler = new Handler();
-//                                    handler.postDelayed(new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            signupButton.buttonFinishedCorrect();
-//                                            Handler handler2 = new Handler();
-//                                            handler2.postDelayed(new Runnable() {
-//                                                @Override
-//                                                public void run() {
-//                                                    signupButton.buttonNormal();
-//                                                    Intent gotologin = new Intent(Sign_Up.this, login.class);
-//                                                    startActivity(gotologin);
-//                                                    Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
-//                                                            Toast.LENGTH_SHORT).show();
-//                                                }
-//                                            },500);
-//                                        }
-//                                    },3000);
-//
-//                                } else {
-//                                    // If sign in fails, display a message to the user.
-//                                    Toast.makeText(Sign_Up.this, "Authentication failed.",
-//                                            Toast.LENGTH_SHORT).show();
-//                                }
+//                                    Toast.makeText(Sign_Up.this, "Sign Up successfully", Toast.LENGTH_SHORT).show();
+//                                    Intent i = new Intent(getApplicationContext(), NavActivity.class);
+//                                    startActivity(i);
+                                    //Sign in success, update UI with the signed-in user's information
+                                    SignupButton signupButton = new SignupButton(Sign_Up.this, signupBtn);
+                                    signupButton.buttonActivated();
+
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            signupButton.buttonFinishedCorrect();
+                                            Handler handler2 = new Handler();
+                                            handler2.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    signupButton.buttonNormal();
+                                                    Intent gotologin = new Intent(Sign_Up.this, login.class);
+                                                    startActivity(gotologin);
+                                                    Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
+                                                            Toast.LENGTH_SHORT).show();
+                                                }
+                                            },500);
+                                        }
+                                    },3000);
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Toast.makeText(Sign_Up.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-
-
-
             }
         });
 
