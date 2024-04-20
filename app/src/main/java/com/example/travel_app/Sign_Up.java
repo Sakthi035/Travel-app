@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,7 +25,11 @@ import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,14 +37,16 @@ import java.util.regex.Pattern;
 public class Sign_Up extends AppCompatActivity {
 
     FirebaseAuth mAuth;
+    FirebaseFirestore fstore;
     View signupBtn;
+    String userID;
 
 //    private Button signupBtn;
     private TextView goToLogin;
 
     private TextInputLayout PasswordLayout,ConfirmPasswordLayout;
 
-    private TextInputEditText Password,confirmPassword,UserEmail,Name;
+    private TextInputEditText Password,confirmPassword,UserEmail,Name,PhoneNum;
 
     public void onStart() {
         super.onStart();
@@ -56,12 +63,15 @@ public class Sign_Up extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        fstore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         signupBtn = findViewById(R.id.signUpBtn);
         PasswordLayout = findViewById(R.id.passwordLayout);
         ConfirmPasswordLayout = findViewById(R.id.confirmPasswordLayout);
         UserEmail = findViewById(R.id.email);
         Name = findViewById(R.id.name);
+        PhoneNum = findViewById(R.id.phoneNum);
         Password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirm_password);
         goToLogin = findViewById(R.id.sloginBtn);
@@ -70,10 +80,12 @@ public class Sign_Up extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email,password,name;
+                String email,password,name,phonenum;
                 email = String.valueOf(UserEmail.getText());
                 password = String.valueOf(Password.getText());
                 name = String.valueOf(Name.getText());
+                phonenum = String.valueOf(PhoneNum.getText());
+
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(Sign_Up.this, "Enter Email",
@@ -98,10 +110,6 @@ public class Sign_Up extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
-//                                    Toast.makeText(Sign_Up.this, "Sign Up successfully", Toast.LENGTH_SHORT).show();
-//                                    Intent i = new Intent(getApplicationContext(), NavActivity.class);
-//                                    startActivity(i);
                                     //Sign in success, update UI with the signed-in user's information
                                     SignupButton signupButton = new SignupButton(Sign_Up.this, signupBtn);
                                     signupButton.buttonActivated();
@@ -116,6 +124,21 @@ public class Sign_Up extends AppCompatActivity {
                                                 @Override
                                                 public void run() {
                                                     signupButton.buttonNormal();
+
+                                                    userID = mAuth.getCurrentUser().getUid();
+                                                    DocumentReference documentReference = fstore.collection("users").document(userID);
+                                                    Map<String,Object> user = new HashMap<>();
+                                                    user.put("Name",name);
+                                                    user.put("PhoneNumber",phonenum);
+                                                    user.put("Email",email);
+                                                    user.put("Password",password);
+
+                                                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void unused) {
+
+                                                        }
+                                                    });
                                                     Intent gotologin = new Intent(Sign_Up.this, login.class);
                                                     startActivity(gotologin);
                                                     Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",

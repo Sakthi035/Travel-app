@@ -84,9 +84,9 @@ public class login extends AppCompatActivity {
                             LoginButton loginButton = new LoginButton(login.this, loginBtn);
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                loginButton.buttonActivated();
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    loginButton.buttonActivated();
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
                                         @Override
