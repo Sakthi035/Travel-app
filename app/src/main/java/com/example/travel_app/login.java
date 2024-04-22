@@ -124,7 +124,7 @@ public class login extends AppCompatActivity {
                                         @Override
                                         public void run() {
                                             loginButton.buttonNormal();
-                                            Toast.makeText(login.this, "Authentication failed 'USER NAME OR PASSWORD INCORRECT'",
+                                            Toast.makeText(login.this, "INVALID USER NAME OR PASSWORD.",
                                                     Toast.LENGTH_SHORT).show();
                                         }
                                     },1000);

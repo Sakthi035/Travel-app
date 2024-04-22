@@ -150,7 +150,7 @@ public class Sign_Up extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(Sign_Up.this, "Authentication failed.",
+                                    Toast.makeText(Sign_Up.this, "Field can't be Empty.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
