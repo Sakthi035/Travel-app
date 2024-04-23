@@ -6,4 +6,69 @@
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!--    List of Popular Places Names in PopularPlaceFragrement  -->
+    <string name="red_fort">RED FORT</string>
+    <string name="golden_temple">GOLDEN TEMPLE</string>
+    <string name="qutab_minar">QUTAB MINAR</string>
+    <string name="mysore_palace">MYSORE PALACE</string>
+    <string name="india_gate">INDIA GATE</string>
+    <string name="aguada_fort">AGUADA FORT</string>
+    <string name="gate_way">GATE WAY OF INDIA</string>
+    <string name="meenakshi_temple">MEENAKSHI TEMPLE</string>
+    <string name="unity">STATUE OF UNITY</string>
+    <string name="baga_beach">BAGA BEACH</string>
+    <string name="promenada_beach">PROMENADA BEACH</string>
+    <string name="mudumalai">MUDUMALAI NATIONAL PARK</string>
+    <string name="ellora">ELLORA CAVES</string>
+    <string name="charminar">CHARMINAR</string>
+    <string name="nageshwar">NAGESWAR JYOTIRLINGA</string>
+    <string name="dudhsagar">DUDHSAGAR WATERFALLS</string>
+    <string name="nubra">NUBRA VALLEY</string>
+    <string name="lotus_temple">LOTUS TEMPLE</string>
+    <string name="victoria">VICTORIA MEMORIAL</string>
+    <string name="rann_of_kutch">GREAT RANN OF KUTCH</string>
+    <string name="jallianwala_bagh">JALLIANWALA BAGH</string>
+    <string name="varkala">VARKALA</string>
+    <string name="rameshwaram">RAMESHWARAM</string>
+    <string name="chikmagalur">CHIKMANGALUR</string>
+    <string name="munnar">MUNNAR</string>
+    <string name="darjeeling">DARJEELING</string>
+    <string name="varanasi">VARANASI</string>
+    <string name="coorg">COORG</string>
+    <string name="kodaikanal">KODAIKANAL</string>
+    <string name="ooty">OOTY</string>
+
+
+<!--    Place city Names-->
+    <string name="delhi">DELHI</string>
+    <string name="amrister">AMRISTER</string>
+    <string name="mysore">MYSORE</string>
+    <string name="goa">GOA</string>
+    <string name="mumbai">MUMBAI</string>
+    <string name="madurai">MADURAI</string>
+    <string name="vadodara">VADODARA</string>
+    <string name="puducherry">PUDUCHERRY</string>
+    <string name="aurangabad">AURANGABAD</string>
+    <string name="hyderabad">HYDERABAD</string>
+    <string name="dwarka">DWARKA</string>
+    <string name="leh">LEH</string>
+    <string name="kolkata">KOLKATA</string>
+    <string name="rann_of_kutch_city">RANN OF KUTCH</string>
+    <string name="kerala">KERALA</string>
+    <string name="tamil_nadu">TAMIL NADU</string>
+    <string name="karnataka">KARNATAKA</string>
+    <string name="west_bengal">WEST BENGAL</string>
+    <string name="uttar_pradesh">UTTAR PRADESH</string>
+
+
+
+
+
+
+
+
+
+
+
 </resources>

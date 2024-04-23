@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PopularPlacesFragment">
+    tools:context=".PopularPlacesFragment"
+    android:background="@drawable/dark_purple_tree_bg">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="POPULAR PALCES"
-        android:textColor="@color/lavender"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="32dp"/>
+        android:id="@+id/popularPlacesRecycleView"
+        android:padding="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        />
 
 </FrameLayout>
