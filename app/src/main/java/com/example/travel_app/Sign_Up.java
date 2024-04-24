@@ -143,6 +143,7 @@ public class Sign_Up extends AppCompatActivity {
                                                     startActivity(gotologin);
                                                     Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
                                                             Toast.LENGTH_SHORT).show();
+                                                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                                                 }
                                             },500);
                                         }

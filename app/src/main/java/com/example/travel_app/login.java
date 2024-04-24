@@ -101,6 +101,7 @@ public class login extends AppCompatActivity {
                                                     Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
                                                     Intent i = new Intent(login.this, NavActivity.class);
                                                     startActivity(i);
+                                                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 //                                                    Handler handler3 = new Handler();
 //                                                    handler3.postDelayed(new Runnable() {
 //                                                        @Override

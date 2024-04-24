@@ -107,19 +107,24 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 />
-
-            <TextView
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="                  Situated near the end of valley, Manali is one of the most attractive tourist spot not only of Himachal Pradesh, but of International fame also. \n\n                  Manali is synonymous streams and birdsong, forests and orchards and grandees of snow-capped mountains.
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="                  Situated near the end of valley, Manali is one of the most attractive tourist spot not only of Himachal Pradesh, but of International fame also. \n\n                  Manali is synonymous streams and birdsong, forests and orchards and grandees of snow-capped mountains.
+Manali is the real starting point of an ancient trade route which crosses the Rohtang and Baralacha passes, and runs via Lahul and Ladakh to Kashmir while divergent road connects it with Spiti.\n\n                  Manali is synonymous streams and birdsong, forests and orchards and grandees of snow-capped mountains.
 Manali is the real starting point of an ancient trade route which crosses the Rohtang and Baralacha passes, and runs via Lahul and Ladakh to Kashmir while divergent road connects it with Spiti."
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="18dp" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+            </ScrollView>
 
 
         </LinearLayout>
