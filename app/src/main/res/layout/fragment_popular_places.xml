@@ -6,6 +6,8 @@
     tools:context=".PopularPlacesFragment"
     android:background="@drawable/dark_purple_tree_bg">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
