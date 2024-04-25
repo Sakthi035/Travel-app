@@ -42,6 +42,8 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.lottie)
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.google.firebase:firebase-auth")
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+
 }

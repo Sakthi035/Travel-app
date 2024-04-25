@@ -102,17 +102,6 @@ public class login extends AppCompatActivity {
                                                     Intent i = new Intent(login.this, NavActivity.class);
                                                     startActivity(i);
                                                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//                                                    Handler handler3 = new Handler();
-//                                                    handler3.postDelayed(new Runnable() {
-//                                                        @Override
-//                                                        public void run() {
-//                                                            animationView.setVisibility(View.VISIBLE);
-//                                                            Logging.setVisibility(View.GONE);
-//                                                            animationView.playAnimation();
-//
-//
-//                                                        }
-//                                                    },3000);
                                                 }
                                             }, 1000);
 

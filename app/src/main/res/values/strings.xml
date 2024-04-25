@@ -7,7 +7,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-<!--    List of Popular Places Names in PopularPlaceFragrement  -->
+    <!--    List of Popular Places Names in PopularPlaceFragrement  -->
     <string name="red_fort">RED FORT</string>
     <string name="golden_temple">GOLDEN TEMPLE</string>
     <string name="qutab_minar">QUTAB MINAR</string>
@@ -40,7 +40,7 @@
     <string name="ooty">OOTY</string>
 
 
-<!--    Place city Names-->
+    <!--    Place city Names-->
     <string name="delhi">DELHI</string>
     <string name="amrister">AMRISTER</string>
     <string name="mysore">MYSORE</string>
@@ -60,15 +60,6 @@
     <string name="karnataka">KARNATAKA</string>
     <string name="west_bengal">WEST BENGAL</string>
     <string name="uttar_pradesh">UTTAR PRADESH</string>
-
-
-
-
-
-
-
-
-
 
 
 </resources>

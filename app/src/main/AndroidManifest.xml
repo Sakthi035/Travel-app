@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,11 +15,17 @@
         android:theme="@style/Theme.Travel_App"
         tools:targetApi="31">
         <activity
+            android:name=".rough"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateProfile"
+            android:exported="false" />
+        <activity
             android:name=".Loading"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".login"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".AboutFragment"
             android:exported="false" />
@@ -61,9 +67,6 @@
             android:exported="false" />
         <activity
             android:name=".Manali"
-            android:exported="false" />
-        <activity
-            android:name=".homePageFragment"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"

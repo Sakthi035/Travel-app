@@ -54,6 +54,8 @@ public class Sign_Up extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent i = new Intent(getApplicationContext(), NavActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
         }
     }
@@ -140,6 +142,8 @@ public class Sign_Up extends AppCompatActivity {
                                                         }
                                                     });
                                                     Intent gotologin = new Intent(Sign_Up.this, login.class);
+                                                    gotologin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|
+                                                            Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(gotologin);
                                                     Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
                                                             Toast.LENGTH_SHORT).show();
