@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/loginTop"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="50dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -24,9 +25,6 @@
             android:textCursorDrawable="@color/white"
             android:textAlignment="center"
             android:textSize="38dp"/>
-
-
-
     </RelativeLayout>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -54,33 +52,34 @@
                 android:textSize="32dp"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="@color/lavender"/>
+                android:textColor="@color/lavender"
+                android:layout_marginTop="30dp"/>
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:id="@+id/name"-->
+<!--                    android:background="@drawable/custom_edit"-->
+<!--                    android:drawableStart="@drawable/ic_person"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:hint="NAME"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:typeface="serif"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="@color/gray"-->
+<!--                    android:textColorHighlight="@color/cardview_dark_background"-->
+<!--                    android:textSize="12sp"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/name"
-                    android:background="@drawable/custom_edit"
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="10dp"
-                    android:hint="NAME"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:padding="10dp"
-                    android:textColor="@color/gray"
-                    android:textColorHighlight="@color/cardview_dark_background"
-                    android:textSize="12sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -97,26 +96,26 @@
                     android:textColorHighlight="@color/cardview_dark_background"
                     android:textSize="12sp"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/phoneNum"
-                    android:background="@drawable/custom_edit"
-                    android:drawableStart="@drawable/ic_phone"
-                    android:drawablePadding="10dp"
-                    android:hint="PHONE NUMBER"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:padding="10dp"
-                    android:textColor="@color/gray"
-                    android:textColorHighlight="@color/cardview_dark_background"
-                    android:textSize="12sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:id="@+id/phoneNum"-->
+<!--                    android:background="@drawable/custom_edit"-->
+<!--                    android:drawableStart="@drawable/ic_phone"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:hint="PHONE NUMBER"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:typeface="serif"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="@color/gray"-->
+<!--                    android:textColorHighlight="@color/cardview_dark_background"-->
+<!--                    android:textSize="12sp"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordLayout"
@@ -137,7 +136,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/custom_edit"
                     android:drawableStart="@drawable/ic_pass"
@@ -173,7 +172,7 @@
                     android:id="@+id/confirm_password"
                     android:background="@drawable/custom_edit"
                     android:hint="CONFIRM PASSWORD"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:textStyle="bold"
                     android:drawableStart="@drawable/ic_pass"
                     android:drawablePadding="10dp"
@@ -190,7 +189,7 @@
                 layout="@layout/signup_button_layout"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="40dp"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

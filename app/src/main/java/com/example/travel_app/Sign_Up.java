@@ -37,16 +37,14 @@ import java.util.regex.Pattern;
 public class Sign_Up extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    FirebaseFirestore fstore;
     View signupBtn;
-    String userID;
 
 //    private Button signupBtn;
     private TextView goToLogin;
 
     private TextInputLayout PasswordLayout,ConfirmPasswordLayout;
 
-    private TextInputEditText Password,confirmPassword,UserEmail,Name,PhoneNum;
+    private TextInputEditText Password,confirmPassword,UserEmail;
 
     public void onStart() {
         super.onStart();
@@ -65,15 +63,11 @@ public class Sign_Up extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-        fstore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         signupBtn = findViewById(R.id.signUpBtn);
         PasswordLayout = findViewById(R.id.passwordLayout);
         ConfirmPasswordLayout = findViewById(R.id.confirmPasswordLayout);
         UserEmail = findViewById(R.id.email);
-        Name = findViewById(R.id.name);
-        PhoneNum = findViewById(R.id.phoneNum);
         Password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirm_password);
         goToLogin = findViewById(R.id.sloginBtn);
@@ -82,30 +76,43 @@ public class Sign_Up extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email,password,name,phonenum;
+                String email,password,confirmPass;
                 email = String.valueOf(UserEmail.getText());
                 password = String.valueOf(Password.getText());
-                name = String.valueOf(Name.getText());
-                phonenum = String.valueOf(PhoneNum.getText());
-
+                confirmPass = String.valueOf(confirmPassword.getText());
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(Sign_Up.this, "Enter Email",
+                    Toast.makeText(Sign_Up.this, "Please Enter Your Email",
                             Toast.LENGTH_SHORT).show();
+                    UserEmail.setError("Email is required");
+                    UserEmail.requestFocus();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Sign_Up.this, "Enter Password",
+                    Toast.makeText(Sign_Up.this, "Please Enter Your Password",
                             Toast.LENGTH_SHORT).show();
+                    Password.setError("Password is required");
+                    Password.requestFocus();
                     return;
                 }
 
-                if(TextUtils.isEmpty(name)){
-                    Toast.makeText(Sign_Up.this, "Enter Name",
+                if(TextUtils.isEmpty(confirmPass)){
+                    Toast.makeText(Sign_Up.this, "Please Enter Your Confirm Password",
                             Toast.LENGTH_SHORT).show();
+                    Password.setError(" Confirm Password is required");
+                    Password.requestFocus();
                     return;
                 }
+
+                if(!password.equals(confirmPass)){
+                    Toast.makeText(Sign_Up.this, "Please re-enter your Passwords",
+                            Toast.LENGTH_SHORT).show();
+                    Password.setError(" Password Doesn't Match");
+                    Password.requestFocus();
+                    return;
+                }
+
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -127,8 +134,8 @@ public class Sign_Up extends AppCompatActivity {
                                                 public void run() {
                                                     signupButton.buttonNormal();
 
-                                                    userID = mAuth.getCurrentUser().getUid();
-                                                    DocumentReference documentReference = fstore.collection("users").document(userID);
+                                                   /* userID = mAuth.getCurrentUser().getUid();
+                                                    DocumentReference documentReference = fstore.collection("Registered Users").document(userID);
                                                     Map<String,Object> user = new HashMap<>();
                                                     user.put("Name",name);
                                                     user.put("PhoneNumber",phonenum);
@@ -140,10 +147,8 @@ public class Sign_Up extends AppCompatActivity {
                                                         public void onSuccess(Void unused) {
 
                                                         }
-                                                    });
+                                                    });*/
                                                     Intent gotologin = new Intent(Sign_Up.this, login.class);
-                                                    gotologin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|
-                                                            Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(gotologin);
                                                     Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
                                                             Toast.LENGTH_SHORT).show();
@@ -155,7 +160,7 @@ public class Sign_Up extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(Sign_Up.this, "Field can't be Empty.",
+                                    Toast.makeText(Sign_Up.this, "The Email is Already Registered",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -214,7 +219,6 @@ public class Sign_Up extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 

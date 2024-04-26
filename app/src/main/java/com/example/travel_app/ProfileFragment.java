@@ -12,27 +12,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class ProfileFragment extends Fragment {
     Activity context;
-    MaterialCardView editProfileBtn;
+    ImageView editProfileBtn;
     String fullName,email,doB,gender,mobile,state;
     MaterialCardView logoutBtn;
     FirebaseAuth authProfile;
@@ -54,14 +46,14 @@ public class ProfileFragment extends Fragment {
         super.onStart();
         logoutBtn = context.findViewById(R.id.logOutBtn);
         textViewProfileName = context.findViewById(R.id.t_profile_full_name);
-        textViewProfileEmail = context.findViewById(R.id.t_profile_email);
+        textViewProfileEmail = context.findViewById(R.id.t_profile_Language);
         textViewProfileDob = context.findViewById(R.id.t_profile_dob);
         textViewProfileGender = context.findViewById(R.id.t_profile_gender);
         textViewProfileMobile = context.findViewById(R.id.t_profile_mobile);
         textViewProfileState = context.findViewById(R.id.t_profile_state);
         textViewProfileWelcome = context.findViewById(R.id.text_show_welcome);
 
-        editProfileBtn = context.findViewById(R.id.editProfileBtn);
+        editProfileBtn = context.findViewById(R.id.edit_profile_btn);
 
         authProfile = FirebaseAuth.getInstance();
         firebaseUser = authProfile.getCurrentUser();
@@ -92,6 +84,18 @@ public class ProfileFragment extends Fragment {
             }
         });
     }
+//    @Override
+    /*public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            // Handle the result from the Activity
+            if (data != null) {
+                // Retrieve data from the Intent
+                String resultData = data.getStringExtra("key");
+                // Process the data as needed
+            }
+        }
+    }*/
 
     private void showUserProfile(FirebaseUser firebaseUser) {
         String userID = firebaseUser.getUid();
@@ -102,17 +106,17 @@ public class ProfileFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 // Construct a query to fetch user data
-        DocumentReference userDocRef = db.collection("users").document(userID);
+        DocumentReference userDocRef = db.collection("Registered Users").document(userID);
 // Retrieve data asynchronously
         userDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()) {
                     // User data found, retrieve it
-                    email = documentSnapshot.getString("Email");
-                    mobile = documentSnapshot.getString("PhoneNumber");
+                    email = firebaseUser.getEmail().toString();
+                    mobile = documentSnapshot.getString("Mobile No");
                     fullName = documentSnapshot.getString("Name");
-                    doB = documentSnapshot.getString("DoB");
+                    doB = documentSnapshot.getString("Date of Birth");
                     gender = documentSnapshot.getString("Gender");
                     state = documentSnapshot.getString("State");
 
@@ -121,6 +125,9 @@ public class ProfileFragment extends Fragment {
                     textViewProfileEmail.setText(email);
                     textViewProfileName.setText(fullName);
                     textViewProfileMobile.setText(mobile);
+                    textViewProfileDob.setText(doB);
+                    textViewProfileGender.setText(gender);
+                    textViewProfileState.setText(state);
 
                     // Do something with the user data
                 } else {

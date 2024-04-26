@@ -68,14 +68,18 @@ public class login extends AppCompatActivity {
                 password = String.valueOf(Password.getText());
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(login.this, "Enter Email",
+                    Toast.makeText(login.this, "Enter Your Email",
                             Toast.LENGTH_SHORT).show();
+                    userEmail.setError("Email is required");
+                    userEmail.requestFocus();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(login.this, "Enter Password",
+                    Toast.makeText(login.this, "Enter Your Password",
                             Toast.LENGTH_SHORT).show();
+                    Password.setError("Password is required");
+                    Password.requestFocus();
                     return;
                 }
 
@@ -108,16 +112,25 @@ public class login extends AppCompatActivity {
                                             }
                                         }, 3000);
                                 } else {
-                                    loginButton.buttonFinishedWrong();
+                                    loginButton.buttonActivated();
                                     Handler handler2 = new Handler();
                                     handler2.postDelayed(new Runnable() {
                                         @Override
                                         public void run() {
-                                            loginButton.buttonNormal();
-                                            Toast.makeText(login.this, "INVALID USER NAME OR PASSWORD.",
-                                                    Toast.LENGTH_SHORT).show();
+                                            loginButton.buttonFinishedWrong();
+
+                                            Handler handler3 = new Handler();
+                                            handler3.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    loginButton.buttonNormal();
+                                                    Toast.makeText(login.this, "INVALID USER NAME OR PASSWORD.",
+                                                            Toast.LENGTH_SHORT).show();
+                                                }
+                                            },1000);
+
                                         }
-                                    },1000);
+                                    },3000);
                                 }
                             }
                         });

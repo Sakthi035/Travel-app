@@ -67,13 +67,13 @@
             android:layout_marginTop="30dp"/>
 
         <TextView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:text="Full Name*"
-             android:textSize="16sp"
-             android:textColor="@color/dark_gray"
-             android:padding="6dp"
-             android:layout_marginTop="50dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Full Name*"
+            android:textSize="16sp"
+            android:textColor="@color/dark_gray"
+            android:padding="6dp"
+            android:layout_marginTop="50dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -88,7 +88,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="E-mail*"
+            android:text="Language*"
             android:textSize="16sp"
             android:textColor="@color/dark_gray"
             android:padding="6dp"
@@ -96,9 +96,9 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:id="@+id/e_profile_email"
+            android:id="@+id/e_profile_language"
             android:layout_height="45dp"
-            android:hint="Enter Your Email"
+            android:hint="Enter Your Language"
             android:inputType="textEmailAddress"
             android:padding="6dp"
             android:textSize="16dp"
@@ -191,22 +191,55 @@
             android:id="@+id/e_profile_state"
             android:layout_height="45dp"
             android:hint="Enter Your State"
-            android:inputType="phone"
+            android:inputType="text"
             android:padding="6dp"
             android:textSize="16dp"
             android:background="@drawable/gray_border"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/profile_update_btn"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:text="UPDATE PROFILE"
+            android:layout_height="60dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="@color/purple2"
-            app:cornerRadius="10dp"/>
+            android:layout_marginBottom="40dp"
+            app:strokeWidth="0dp"
+            android:backgroundTint="@color/light_gray"
+            android:id="@+id/profile_update_btn"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/update_ic_purple"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="UPDATE PROFILE"
+                    android:textColor="@color/purple3"
+                    android:textSize="24dp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
     </LinearLayout>
 </ScrollView>
