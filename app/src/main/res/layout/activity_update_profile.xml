@@ -64,6 +64,7 @@
             android:id="@+id/t_update_head"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textAlignment="center"
+            android:textColor="@color/dark_gray"
             android:layout_marginTop="30dp"/>
 
         <TextView
@@ -82,7 +83,8 @@
             android:hint="Enter Your Full Name"
             android:inputType="textPersonName"
             android:padding="6dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
             android:background="@drawable/gray_border"/>
 
         <TextView
@@ -101,7 +103,8 @@
             android:hint="Enter Your Language"
             android:inputType="textEmailAddress"
             android:padding="6dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
             android:background="@drawable/gray_border"/>
 
         <TextView
@@ -117,11 +120,13 @@
             android:layout_width="match_parent"
             android:id="@+id/e_profile_dob"
             android:layout_height="45dp"
-            android:hint="Enter Your Date of Birth"
+            android:hint="Select Your Date of Birth"
             android:inputType="textPersonName"
             android:padding="6dp"
-            android:textSize="16dp"
-            android:background="@drawable/gray_border"/>
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:background="@drawable/gray_border"
+            android:focusable="false"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -174,7 +179,8 @@
             android:hint="Enter Your Mobile No"
             android:inputType="phone"
             android:padding="6dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
             android:background="@drawable/gray_border"/>
 
         <TextView
@@ -193,7 +199,8 @@
             android:hint="Enter Your State"
             android:inputType="text"
             android:padding="6dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
             android:background="@drawable/gray_border"/>
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"

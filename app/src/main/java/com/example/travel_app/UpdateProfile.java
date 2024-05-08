@@ -2,12 +2,14 @@ package com.example.travel_app;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,6 +29,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.MessageFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -42,6 +46,9 @@ public class UpdateProfile extends AppCompatActivity {
 
     private RadioGroup radioGroupUProfileGender;
     private RadioButton radioButtonUProfileGenderSelected;
+
+    private DatePickerDialog picker;
+
 
     String FullName, Language, Dob, Mobile, State, Gender, userID;
 
@@ -63,6 +70,25 @@ public class UpdateProfile extends AppCompatActivity {
         radioGroupUProfileGender = findViewById(R.id.radio_group_profile_gender);
 
         updateProfileBtn = findViewById(R.id.profile_update_btn);
+
+        editTextUProfileDoB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar calendar = Calendar.getInstance();
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                int month = calendar.get(Calendar.MONTH);
+                int year = calendar.get(Calendar.YEAR);
+                //Date picker to set the Dob of the user
+                picker = new DatePickerDialog(UpdateProfile.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        //The message format is used for the display for the dob in the textfield
+                        editTextUProfileDoB.setText(dayOfMonth  + "/" + (month+1) + "/" + year);
+                    }
+                },year, month,day);//these are the parameters for the onDateset which is
+                picker.show();
+            }
+        });
 
         UPauth = FirebaseAuth.getInstance();
         firebaseUser = UPauth.getCurrentUser();
@@ -102,17 +128,36 @@ public class UpdateProfile extends AppCompatActivity {
         Mobile = editTextUProfileMobile.getText().toString().trim();
         State = editTextUProfileState.getText().toString().trim();
 
-        if (TextUtils.isEmpty(FullName) || TextUtils.isEmpty(Language) || TextUtils.isEmpty(Dob) ||
-                TextUtils.isEmpty(Mobile) || TextUtils.isEmpty(State)) {
-            Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(FullName)) {
+            editTextUProfileFullName.setError("Full name is required");
+            editTextUProfileFullName.requestFocus();
             return false;
         }
-
+        if (TextUtils.isEmpty(Language)) {
+            editTextUProfileLanguage.setError("Language is required");
+            editTextUProfileLanguage.requestFocus();
+            return false;
+        }
+        if (TextUtils.isEmpty(Dob)) {
+            editTextUProfileDoB.setError("Date of Birth is required");
+            editTextUProfileDoB.requestFocus();
+            return false;
+        }
+        if (TextUtils.isEmpty(Mobile)) {
+            editTextUProfileMobile.setError("Mobile number is required");
+            editTextUProfileMobile.requestFocus();
+            return false;
+        }
         if (!Patterns.PHONE.matcher(Mobile).matches()) {
             editTextUProfileMobile.setError("Invalid mobile number");
+            editTextUProfileMobile.requestFocus();
             return false;
         }
-
+        if (TextUtils.isEmpty(State)) {
+            editTextUProfileState.setError("State is required");
+            editTextUProfileState.requestFocus();
+            return false;
+        }
         return true;
     }
 
