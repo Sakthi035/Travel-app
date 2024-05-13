@@ -22,9 +22,12 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ProfileFragment extends Fragment {
     Activity context;
     ImageView editProfileBtn;
+    CircleImageView profilePic;
     String fullName,email,doB,gender,mobile,state;
     MaterialCardView logoutBtn;
     FirebaseAuth authProfile;
@@ -52,12 +55,21 @@ public class ProfileFragment extends Fragment {
         textViewProfileMobile = context.findViewById(R.id.t_profile_mobile);
         textViewProfileState = context.findViewById(R.id.t_profile_state);
         textViewProfileWelcome = context.findViewById(R.id.text_show_welcome);
+        profilePic = context.findViewById(R.id.profile_pic);
 
         editProfileBtn = context.findViewById(R.id.edit_profile_btn);
 
         authProfile = FirebaseAuth.getInstance();
         firebaseUser = authProfile.getCurrentUser();
         db = FirebaseFirestore.getInstance();
+
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context,UploadProfilePic.class);
+                startActivity(i);
+            }
+        });
 
 
         if(firebaseUser == null){

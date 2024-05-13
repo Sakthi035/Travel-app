@@ -7,7 +7,6 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,7 +62,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email,password,name;
+                String email,password;
                 email = String.valueOf(userEmail.getText());
                 password = String.valueOf(Password.getText());
 
@@ -85,7 +84,7 @@ public class login extends AppCompatActivity {
 
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            LoginButton loginButton = new LoginButton(login.this, loginBtn);
+                            ButtonActivities loginButton = new ButtonActivities(login.this, loginBtn);
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 loginButton.buttonActivated();

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Travel_App"
         tools:targetApi="31">
         <activity
+            android:name=".UploadProfilePic"
+            android:exported="false" />
+        <activity
             android:name=".UpdateProfile"
             android:exported="false" />
         <activity

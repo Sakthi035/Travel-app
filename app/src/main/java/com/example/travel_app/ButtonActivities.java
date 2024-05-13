@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class LoginButton {
+public class ButtonActivities {
     private CardView cardView;
     private ProgressBar progressBar;
     private TextView textView;
@@ -17,7 +17,7 @@ public class LoginButton {
 
     Animation fad_in;
 
-    LoginButton(Context ct, View view) {
+    ButtonActivities(Context ct, View view) {
 
         cardView = view.findViewById(R.id.loginCardView);
         layout = view.findViewById(R.id.loginLayout);
@@ -49,7 +49,7 @@ public class LoginButton {
     void buttonNormal(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
         progressBar.setVisibility(View.GONE);
-        textView.setText("LOGIN");
+        textView.setText("UPLOAD");
 
     }
 }
