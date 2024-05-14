@@ -2,6 +2,7 @@ package com.example.travel_app;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -58,6 +60,7 @@ public class ProfileFragment extends Fragment {
         profilePic = context.findViewById(R.id.profile_pic);
 
         editProfileBtn = context.findViewById(R.id.edit_profile_btn);
+
 
         authProfile = FirebaseAuth.getInstance();
         firebaseUser = authProfile.getCurrentUser();
@@ -140,6 +143,10 @@ public class ProfileFragment extends Fragment {
                     textViewProfileDob.setText(doB);
                     textViewProfileGender.setText(gender);
                     textViewProfileState.setText(state);
+
+                    Uri uri = firebaseUser.getPhotoUrl();
+                    //set the Image which is form the DataBase to the Image view
+                    Picasso.get().load(uri).into(profilePic);
 
                     // Do something with the user data
                 } else {

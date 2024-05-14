@@ -98,7 +98,7 @@ public class UploadProfilePic extends AppCompatActivity {
                     fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            UploadButton.buttonFinishedCorrect();
+                            UploadButton.buttonNormal();
                             Uri downloadUri = uri;
                             firebaseUser = authProfile.getCurrentUser();
 
@@ -112,7 +112,7 @@ public class UploadProfilePic extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(UploadProfilePic.this, "Picture Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                            UploadButton.buttonNormal();
+                            UploadButton.buttonFinishedCorrect();
                         }
                     },2000);
 
