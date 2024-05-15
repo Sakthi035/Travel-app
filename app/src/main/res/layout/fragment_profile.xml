@@ -83,9 +83,7 @@
                     android:layout_marginEnd="75dp"
                     android:src="@drawable/person_icon"
                     app:civ_border_width="0dp"
-                    app:civ_circle_background_color="@color/white"
-                    android:background="@drawable/border_white_circle"
-                    android:padding="3dp"/>
+                    app:civ_circle_background_color="@color/lavender" />
 
                 <TextView
                     android:id="@+id/text_show_welcome"
@@ -129,9 +127,7 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:padding="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -160,9 +156,7 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:padding="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -190,9 +184,7 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:padding="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -201,8 +193,7 @@
                 android:id="@+id/divide_dob"
                 android:background="@color/purple2"
                 android:layout_below="@id/t_profile_dob"
-                android:layout_marginBottom="30dp"
-                />
+                android:layout_marginBottom="30dp"/>
 
             <ImageView
                 android:layout_width="30dp"
@@ -221,9 +212,7 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:padding="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -251,9 +240,7 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:padding="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -281,9 +268,7 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:padding="5dp"/>
 
             <View
                 android:layout_width="match_parent"

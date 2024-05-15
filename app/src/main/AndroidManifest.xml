@@ -15,16 +15,16 @@
         android:theme="@style/Theme.Travel_App"
         tools:targetApi="31">
         <activity
-            android:name=".UploadProfilePic"
+            android:name=".profile_activities.UploadProfilePic"
             android:exported="false" />
         <activity
-            android:name=".UpdateProfile"
+            android:name=".profile_activities.UpdateProfile"
             android:exported="false" />
         <activity
             android:name=".rough"
             android:exported="false" />
         <activity
-            android:name=".UpdateProfile"
+            android:name=".profile_activities.UpdateProfile"
             android:exported="false" />
         <activity
             android:name=".Loading"

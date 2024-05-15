@@ -1,7 +1,6 @@
-package com.example.travel_app;
+package com.example.travel_app.profile_updates;
 
 import android.annotation.SuppressLint;
-import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,18 +8,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.webkit.MimeTypeMap;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.travel_app.java_classes.ButtonActivities;
+import com.example.travel_app.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,8 +25,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-
-import java.util.Objects;
 
 
 public class UploadProfilePic extends AppCompatActivity {
@@ -98,7 +91,7 @@ public class UploadProfilePic extends AppCompatActivity {
                     fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            UploadButton.buttonNormal();
+                            UploadButton.buttonNormalUpload();
                             Uri downloadUri = uri;
                             firebaseUser = authProfile.getCurrentUser();
 
@@ -131,7 +124,7 @@ public class UploadProfilePic extends AppCompatActivity {
                     handler3.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            UploadButton.buttonNormal();
+                            UploadButton.buttonNormalUpload();
                             Toast.makeText(UploadProfilePic.this, "SOMETHING WENT WRONG.",
                                     Toast.LENGTH_SHORT).show();
                         }

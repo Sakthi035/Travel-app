@@ -1,4 +1,4 @@
-package com.example.travel_app;
+package com.example.travel_app.java_classes;
 
 public class DataModelPopularPlaces {
     private int placeImage;
