@@ -45,7 +45,7 @@ public class UpdateProfile extends AppCompatActivity {
             editTextUProfileMobile, editTextUProfileState;
 
     private RadioGroup radioGroupUProfileGender;
-    private RadioButton radioButtonUProfileGenderSelected;
+    private RadioButton radioButtonUProfileGenderSelected,maleRadioBtn,femaleRadioBtn;
 
     private DatePickerDialog picker;
 
@@ -68,6 +68,8 @@ public class UpdateProfile extends AppCompatActivity {
         editTextUProfileMobile = findViewById(R.id.e_profile_mobile_no);
         editTextUProfileState = findViewById(R.id.e_profile_state);
         radioGroupUProfileGender = findViewById(R.id.radio_group_profile_gender);
+        maleRadioBtn = findViewById(R.id.radio_male);
+        femaleRadioBtn = findViewById(R.id.radio_female);
 
         updateProfileBtn = findViewById(R.id.profile_update_btn);
 
@@ -191,12 +193,12 @@ public class UpdateProfile extends AppCompatActivity {
 
         // Assuming you have already initialized Firebase in your app
 
-// Access Firestore instance
+        // Access Firestore instance
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-// Construct a query to fetch user data
+        // Construct a query to fetch user data
         DocumentReference userDocRef = db.collection("Registered Users").document(userID);
-// Retrieve data asynchronously
+        // Retrieve data asynchronously
         userDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -215,6 +217,13 @@ public class UpdateProfile extends AppCompatActivity {
                     editTextUProfileMobile.setText(mobile);
                     editTextUProfileDoB.setText(doB);
                     editTextUProfileState.setText(state);
+
+                    assert gender != null;
+                    if (gender.equalsIgnoreCase("male")){
+                        maleRadioBtn.setChecked(true);
+                    }else if (gender.equalsIgnoreCase("female")){
+                        femaleRadioBtn.setChecked(true);
+                    }
 
                     // Do something with the user data
                 } else {

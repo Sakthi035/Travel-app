@@ -127,7 +127,9 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
             <View
                 android:layout_width="match_parent"
@@ -156,7 +158,9 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
             <View
                 android:layout_width="match_parent"
@@ -184,7 +188,9 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
             <View
                 android:layout_width="match_parent"
@@ -193,7 +199,8 @@
                 android:id="@+id/divide_dob"
                 android:background="@color/purple2"
                 android:layout_below="@id/t_profile_dob"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                />
 
             <ImageView
                 android:layout_width="30dp"
@@ -212,7 +219,9 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
             <View
                 android:layout_width="match_parent"
@@ -240,7 +249,9 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
             <View
                 android:layout_width="match_parent"
@@ -268,7 +279,9 @@
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
             <View
                 android:layout_width="match_parent"
