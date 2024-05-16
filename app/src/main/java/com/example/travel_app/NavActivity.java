@@ -1,4 +1,4 @@
-package com.example.travel_app.main;
+package com.example.travel_app;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,14 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.travel_app.R;
-import com.example.travel_app.fragments.AboutFragment;
-import com.example.travel_app.fragments.CalculatorFragment;
-import com.example.travel_app.fragments.HomeFragment;
-import com.example.travel_app.fragments.LocationFragment;
-import com.example.travel_app.fragments.PopularPlacesFragment;
-import com.example.travel_app.fragments.ProfileFragment;
-import com.example.travel_app.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;

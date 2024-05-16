@@ -1,4 +1,4 @@
-package com.example.travel_app.fragments;
+package com.example.travel_app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,10 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.travel_app.R;
-import com.example.travel_app.user_verification.login;
-import com.example.travel_app.profile_updates.UpdateProfile;
-import com.example.travel_app.profile_updates.UploadProfilePic;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.card.MaterialCardView;
@@ -73,7 +69,7 @@ public class ProfileFragment extends Fragment {
         profilePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, UploadProfilePic.class);
+                Intent i = new Intent(context,UploadProfilePic.class);
                 startActivity(i);
             }
         });

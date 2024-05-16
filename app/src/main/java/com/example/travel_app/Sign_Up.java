@@ -1,4 +1,4 @@
-package com.example.travel_app.user_verification;
+package com.example.travel_app;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,23 +8,29 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.travel_app.java_classes.ButtonActivities;
-import com.example.travel_app.main.NavActivity;
-import com.example.travel_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -127,6 +133,21 @@ public class Sign_Up extends AppCompatActivity {
                                                 @Override
                                                 public void run() {
                                                     signupButton.buttonNormalSignUp();
+
+                                                   /* userID = mAuth.getCurrentUser().getUid();
+                                                    DocumentReference documentReference = fstore.collection("Registered Users").document(userID);
+                                                    Map<String,Object> user = new HashMap<>();
+                                                    user.put("Name",name);
+                                                    user.put("PhoneNumber",phonenum);
+                                                    user.put("Email",email);
+                                                    user.put("Password",password);
+
+                                                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void unused) {
+
+                                                        }
+                                                    });*/
                                                     Intent gotologin = new Intent(Sign_Up.this, login.class);
                                                     startActivity(gotologin);
                                                     Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",

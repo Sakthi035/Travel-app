@@ -1,21 +1,24 @@
-package com.example.travel_app.home_page_activities;
+package com.example.travel_app;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.AnimationTypes;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.travel_app.main.NavActivity;
-import com.example.travel_app.R;
 
 import java.util.ArrayList;
 
-public class TajMahal extends AppCompatActivity {
+public class Goa extends AppCompatActivity {
 
     private ImageSlider imageSlider;
     private TextView backbtn;
@@ -28,7 +31,7 @@ public class TajMahal extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TajMahal.this, NavActivity.class);
+                Intent i = new Intent(Goa.this,NavActivity.class);
                 startActivity(i);
             }
         });
@@ -36,10 +39,10 @@ public class TajMahal extends AppCompatActivity {
         imageSlider = findViewById(R.id.image_slider_manali);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
 
-        slideModels.add(new SlideModel(R.drawable.tajmahal_slide1, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.tajmahal_slide2, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.tajmahal_slide3, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.tajmahal_slide4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide2, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.goa_slide4, ScaleTypes.FIT));
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 

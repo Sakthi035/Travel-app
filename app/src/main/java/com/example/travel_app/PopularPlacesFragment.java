@@ -1,4 +1,4 @@
-package com.example.travel_app.fragments;
+package com.example.travel_app;
 
 import android.os.Bundle;
 
@@ -9,10 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.travel_app.java_classes.DataModelPopularPlaces;
-import com.example.travel_app.java_classes.PopularPlaceAdapter;
-import com.example.travel_app.R;
 
 import java.util.ArrayList;
 import java.util.List;

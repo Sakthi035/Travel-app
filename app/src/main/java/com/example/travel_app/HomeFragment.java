@@ -1,4 +1,4 @@
-package com.example.travel_app.fragments;
+package com.example.travel_app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,14 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.example.travel_app.home_page_activities.BigTemple;
-import com.example.travel_app.home_page_activities.BoatHouse;
-import com.example.travel_app.home_page_activities.Goa;
-import com.example.travel_app.home_page_activities.IshaYoga;
-import com.example.travel_app.home_page_activities.Manali;
-import com.example.travel_app.R;
-import com.example.travel_app.home_page_activities.TajMahal;
 
 public class HomeFragment extends Fragment {
 

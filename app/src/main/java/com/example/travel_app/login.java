@@ -1,4 +1,4 @@
-package com.example.travel_app.user_verification;
+package com.example.travel_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.example.travel_app.java_classes.ButtonActivities;
-import com.example.travel_app.main.NavActivity;
-import com.example.travel_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -129,7 +126,6 @@ public class login extends AppCompatActivity {
                                                     Toast.makeText(login.this, "INVALID USER NAME OR PASSWORD.",
                                                             Toast.LENGTH_SHORT).show();
                                                 }
-
                                             },1000);
 
                                         }

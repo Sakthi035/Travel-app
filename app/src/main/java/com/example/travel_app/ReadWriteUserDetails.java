@@ -1,4 +1,4 @@
-package com.example.travel_app.java_classes;
+package com.example.travel_app;
 
 public class ReadWriteUserDetails {
 

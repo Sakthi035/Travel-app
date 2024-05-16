@@ -1,4 +1,4 @@
-package com.example.travel_app.java_classes;
+package com.example.travel_app;
 
 import android.content.Context;
 import android.view.View;
@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.example.travel_app.R;
-
 public class ButtonActivities {
     private CardView cardView;
     private ProgressBar progressBar;
@@ -19,7 +17,7 @@ public class ButtonActivities {
 
     Animation fad_in;
 
-    public ButtonActivities(Context ct, View view) {
+    ButtonActivities(Context ct, View view) {
 
         cardView = view.findViewById(R.id.loginCardView);
         layout = view.findViewById(R.id.loginLayout);
@@ -30,42 +28,39 @@ public class ButtonActivities {
 
     }
 
-    public void buttonActivated(){
+    void buttonActivated(){
         progressBar.setVisibility(View.VISIBLE);
         textView.setText("PLEASE WAIT...");
     }
 
-    public void buttonFinishedCorrect(){
+    void buttonFinishedCorrect(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.green));
         progressBar.setVisibility(View.GONE);
         textView.setText("DONE");
     }
 
-    public void buttonFinishedWrong(){
+    void buttonFinishedWrong(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.red));
         progressBar.setVisibility(View.GONE);
         textView.setText("FAILED");
     }
 
 
-    public void buttonNormalUpload(){
+    void buttonNormalUpload(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
         progressBar.setVisibility(View.GONE);
         textView.setText("UPLOAD");
-
     }
 
-    public void buttonNormalSignUp(){
+    void buttonNormalSignUp(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
         progressBar.setVisibility(View.GONE);
         textView.setText("SIGN UP");
-
     }
 
-    public void buttonNormalLogin(){
+    void buttonNormalLogin(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
         progressBar.setVisibility(View.GONE);
         textView.setText("LOGIN");
-
     }
 }

@@ -1,13 +1,10 @@
-package com.example.travel_app.main;
+package com.example.travel_app;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.travel_app.R;
-import com.example.travel_app.user_verification.login;
 
 public class SplashScreen extends AppCompatActivity {
 
