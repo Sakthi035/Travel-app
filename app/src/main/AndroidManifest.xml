@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -15,13 +20,10 @@
         android:theme="@style/Theme.Travel_App"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".UploadProfilePic"
-            android:exported="false" />
-        <activity
-            android:name=".UpdateProfile"
-            android:exported="false" />
-        <activity
-            android:name=".rough"
             android:exported="false" />
         <activity
             android:name=".UpdateProfile"

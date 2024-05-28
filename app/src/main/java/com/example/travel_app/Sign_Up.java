@@ -50,7 +50,7 @@ public class Sign_Up extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if(currentUser != null && currentUser.isEmailVerified()){
             Intent i = new Intent(getApplicationContext(), NavActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|
                     Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -119,44 +119,41 @@ public class Sign_Up extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    //Sign in success, update UI with the signed-in user's information
-                                    SignupButton signupButton = new SignupButton(Sign_Up.this, signupBtn);
-                                    signupButton.buttonActivated();
-
-                                    Handler handler = new Handler();
-                                    handler.postDelayed(new Runnable() {
+                                    mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
-                                        public void run() {
-                                            signupButton.buttonFinishedCorrect();
-                                            Handler handler2 = new Handler();
-                                            handler2.postDelayed(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    signupButton.buttonNormal();
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                ButtonActivities signupButton = new ButtonActivities(Sign_Up.this, signupBtn);
+                                                signupButton.buttonActivated();
 
-                                                   /* userID = mAuth.getCurrentUser().getUid();
-                                                    DocumentReference documentReference = fstore.collection("Registered Users").document(userID);
-                                                    Map<String,Object> user = new HashMap<>();
-                                                    user.put("Name",name);
-                                                    user.put("PhoneNumber",phonenum);
-                                                    user.put("Email",email);
-                                                    user.put("Password",password);
+                                                Handler handler = new Handler();
+                                                handler.postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        signupButton.buttonFinishedCorrect();
+                                                        Handler handler2 = new Handler();
+                                                        handler2.postDelayed(new Runnable() {
+                                                            @Override
+                                                            public void run() {
+                                                                signupButton.buttonNormalSignUp();
+                                                                Intent gotologin = new Intent(Sign_Up.this, login.class);
+                                                                startActivity(gotologin);
+                                                                Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
+                                                                        Toast.LENGTH_SHORT).show();
+                                                                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                                                            }
+                                                        },500);
+                                                    }
+                                                },3000);
+                                            }
+                                            else {
+                                                Toast.makeText(Sign_Up.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                            }
 
-                                                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void unused) {
-
-                                                        }
-                                                    });*/
-                                                    Intent gotologin = new Intent(Sign_Up.this, login.class);
-                                                    startActivity(gotologin);
-                                                    Toast.makeText(Sign_Up.this, "SIGN UP SUCCESSFULLY",
-                                                            Toast.LENGTH_SHORT).show();
-                                                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                                                }
-                                            },500);
                                         }
-                                    },3000);
+                                    });
+                                    //Sign in success, update UI with the signed-in user's information
+
 
                                 } else {
                                     // If sign in fails, display a message to the user.

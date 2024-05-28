@@ -51,7 +51,7 @@
         </RelativeLayout>
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="380dp"
             android:background="@drawable/custom_edit"
             android:backgroundTint="@color/white"
             android:layout_margin="30dp"
@@ -65,22 +65,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal"
+                android:id="@+id/loginLinear"
                 android:padding="24dp">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/loginCard"
                     android:text="LOGIN"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
-                    android:textColor="@color/lavender"/>
+                    android:textColor="@color/lavender" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="55dp">
+                    android:layout_marginTop="30dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/userEmail"
@@ -127,7 +128,18 @@
                     layout="@layout/login_btn_layout"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginTop="30dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/forgotPass"
+                    android:text="Forgot Password?"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/red"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

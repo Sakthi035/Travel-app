@@ -98,7 +98,7 @@ public class UploadProfilePic extends AppCompatActivity {
                     fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            UploadButton.buttonNormal();
+                            UploadButton.buttonNormalUpload();
                             Uri downloadUri = uri;
                             firebaseUser = authProfile.getCurrentUser();
 
@@ -131,7 +131,7 @@ public class UploadProfilePic extends AppCompatActivity {
                     handler3.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            UploadButton.buttonNormal();
+                            UploadButton.buttonNormalUpload();
                             Toast.makeText(UploadProfilePic.this, "SOMETHING WENT WRONG.",
                                     Toast.LENGTH_SHORT).show();
                         }

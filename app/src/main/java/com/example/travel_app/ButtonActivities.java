@@ -46,10 +46,28 @@ public class ButtonActivities {
     }
 
 
-    void buttonNormal(){
+    void buttonNormalSignUp(){
+        layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
+        progressBar.setVisibility(View.GONE);
+        textView.setText("SIGN UP");
+
+    }
+
+    void buttonNormalLogin(){
+        layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
+        progressBar.setVisibility(View.GONE);
+        textView.setText("LOGIN");
+
+    }
+    void buttonNormalUpload(){
         layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
         progressBar.setVisibility(View.GONE);
         textView.setText("UPLOAD");
+    }
+    void buttonNormalReset(){
+        layout.setBackgroundColor(cardView.getResources().getColor(R.color.lavender));
+        progressBar.setVisibility(View.GONE);
+        textView.setText("RESET");
 
     }
 }

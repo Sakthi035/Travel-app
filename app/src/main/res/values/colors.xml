@@ -28,6 +28,7 @@
     <color name="gray">#808080</color>
     <color name="light_gray">#d3d3d3</color>
     <color name="dark_gray">#555555</color>
+    <color name="glass">#00000050</color>
 
 
 

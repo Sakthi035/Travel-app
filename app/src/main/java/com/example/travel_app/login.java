@@ -27,7 +27,7 @@ public class login extends AppCompatActivity {
     FirebaseAuth mAuth;
     View loginBtn;
     private LottieAnimationView animationView;
-    private TextView gotoSignUp;
+    private TextView gotoSignUp,ForgotPass;
     private TextInputLayout TextInputLayout;
     private TextInputEditText Password,userEmail;
     private LinearLayout Logging;
@@ -38,7 +38,7 @@ public class login extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if(currentUser != null && currentUser.isEmailVerified()){
             Intent i = new Intent(getApplicationContext(), NavActivity.class);
             startActivity(i);
         }
@@ -56,6 +56,15 @@ public class login extends AppCompatActivity {
         TextInputLayout = findViewById(R.id.passwordLayout);
 //        animationView = findViewById(R.id.animation_view);
         Logging = findViewById(R.id.loginPg);
+        ForgotPass = findViewById(R.id.forgotPass);
+
+        ForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(login.this,ForgotPassword.class);
+                startActivity(i);
+            }
+        });
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -90,26 +99,31 @@ public class login extends AppCompatActivity {
                                 loginButton.buttonActivated();
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Handler handler = new Handler();
-                                    handler.postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
+                                    if(mAuth.getCurrentUser().isEmailVerified()){
+                                        Handler handler = new Handler();
+                                        handler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
 
-                                            loginButton.buttonFinishedCorrect();
-                                            Handler handler1 = new Handler();
-                                            handler1.postDelayed(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    loginButton.buttonNormal();
-                                                    Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
-                                                    Intent i = new Intent(login.this, NavActivity.class);
-                                                    startActivity(i);
-                                                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                                }
-                                            }, 1000);
+                                                loginButton.buttonFinishedCorrect();
+                                                Handler handler1 = new Handler();
+                                                handler1.postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        loginButton.buttonNormalLogin();
+                                                        Toast.makeText(login.this, "LOGGING SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+                                                        Intent i = new Intent(login.this, NavActivity.class);
+                                                        startActivity(i);
+                                                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                                                    }
+                                                }, 1000);
 
                                             }
                                         }, 3000);
+                                    }else {
+                                        loginButton.buttonNormalLogin();
+                                        Toast.makeText(login.this, "Please Verify Your Email", Toast.LENGTH_SHORT).show();
+                                    }
                                 } else {
                                     loginButton.buttonActivated();
                                     Handler handler2 = new Handler();
@@ -122,7 +136,7 @@ public class login extends AppCompatActivity {
                                             handler3.postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    loginButton.buttonNormal();
+                                                    loginButton.buttonNormalLogin();
                                                     Toast.makeText(login.this, "INVALID USER NAME OR PASSWORD.",
                                                             Toast.LENGTH_SHORT).show();
                                                 }

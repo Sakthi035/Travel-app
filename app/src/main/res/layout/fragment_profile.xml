@@ -146,7 +146,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:id="@+id/ic_profile_email"
-                android:background="@drawable/language_ic_purple"
+                android:background="@drawable/email"
                 android:layout_below="@id/divide_full_name"/>
 
 
@@ -156,7 +156,7 @@
                 android:id="@+id/t_profile_Language"
                 android:layout_below="@id/divide_full_name"
                 android:layout_alignStart="@id/ic_profile_email"
-                android:hint="Language"
+                android:hint="E-Mail"
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
                 android:gravity="center"
