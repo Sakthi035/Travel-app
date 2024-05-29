@@ -175,7 +175,8 @@ public class UpdateProfile extends AppCompatActivity {
         Gender = radioButtonUProfileGenderSelected.getText().toString();
         userID = UPauth.getCurrentUser().getUid();
 
-        DocumentReference documentReference = FStore.collection("Registered Users").document(userID);
+        DocumentReference documentReference = FStore.collection("Registered Users")
+                .document(userID);
         Map<String, Object> users = new HashMap<>();
         users.put("Name", FullName);
         users.put("Language", Language);

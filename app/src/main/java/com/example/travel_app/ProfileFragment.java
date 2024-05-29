@@ -30,13 +30,13 @@ public class ProfileFragment extends Fragment {
     Activity context;
     ImageView editProfileBtn;
     CircleImageView profilePic;
-    String fullName,email,doB,gender,mobile,state;
+    String fullName,email,doB,gender,mobile,state,language;
     MaterialCardView logoutBtn;
     FirebaseAuth authProfile;
     FirebaseUser firebaseUser;
     FirebaseFirestore db;
     TextView textViewProfileName,textViewProfileEmail,textViewProfileDob,
-            textViewProfileGender,textViewProfileMobile,textViewProfileState, textViewProfileWelcome;
+            textViewProfileGender,textViewProfileMobile,textViewProfileState, textViewProfileWelcome,textViewProfileLanguage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,7 +51,8 @@ public class ProfileFragment extends Fragment {
         super.onStart();
         logoutBtn = context.findViewById(R.id.logOutBtn);
         textViewProfileName = context.findViewById(R.id.t_profile_full_name);
-        textViewProfileEmail = context.findViewById(R.id.t_profile_Language);
+        textViewProfileEmail = context.findViewById(R.id.t_profile_Email);
+        textViewProfileLanguage = context.findViewById(R.id.t_profile_Language);
         textViewProfileDob = context.findViewById(R.id.t_profile_dob);
         textViewProfileGender = context.findViewById(R.id.t_profile_gender);
         textViewProfileMobile = context.findViewById(R.id.t_profile_mobile);
@@ -129,6 +130,7 @@ public class ProfileFragment extends Fragment {
                 if (documentSnapshot.exists()) {
                     // User data found, retrieve it
                     email = firebaseUser.getEmail().toString();
+                    language = documentSnapshot.getString("Language");
                     mobile = documentSnapshot.getString("Mobile No");
                     fullName = documentSnapshot.getString("Name");
                     doB = documentSnapshot.getString("Date of Birth");
@@ -138,6 +140,7 @@ public class ProfileFragment extends Fragment {
                     textViewProfileWelcome.setText("Welcome  " + fullName + " !");
 
                     textViewProfileEmail.setText(email);
+                    textViewProfileLanguage.setText(language);
                     textViewProfileName.setText(fullName);
                     textViewProfileMobile.setText(mobile);
                     textViewProfileDob.setText(doB);

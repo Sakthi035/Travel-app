@@ -153,7 +153,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/t_profile_Language"
+                android:id="@+id/t_profile_Email"
                 android:layout_below="@id/divide_full_name"
                 android:layout_alignStart="@id/ic_profile_email"
                 android:hint="E-Mail"
@@ -169,8 +169,39 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/purple2"
-                android:layout_below="@id/t_profile_Language"
+                android:layout_below="@id/t_profile_Email"
                 android:id="@+id/divide_email"
+                android:layout_marginBottom="30dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/ic_profile_language"
+                android:background="@drawable/language_ic_purple"
+                android:layout_below="@id/divide_email"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/t_profile_Language"
+                android:layout_below="@id/divide_email"
+                android:layout_alignStart="@id/ic_profile_email"
+                android:hint="Language"
+                android:layout_marginStart="50dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/purple2"
+                android:layout_below="@id/t_profile_Language"
+                android:id="@+id/divide_language"
                 android:layout_marginBottom="30dp"/>
 
             <ImageView
@@ -178,14 +209,14 @@
                 android:layout_height="30dp"
                 android:id="@+id/ic_profile_dob"
                 android:background="@drawable/calendar"
-                android:layout_below="@id/divide_email"/>
+                android:layout_below="@id/divide_language"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/t_profile_dob"
                 android:layout_alignStart="@id/ic_profile_dob"
-                android:layout_below="@id/divide_email"
+                android:layout_below="@id/divide_language"
                 android:hint="Date of Birth"
                 android:layout_marginStart="50dp"
                 android:textSize="18sp"
